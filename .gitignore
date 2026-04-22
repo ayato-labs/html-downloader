@@ -1,0 +1,28 @@
+# Environment variables
+.env
+.env.*
+
+# Security credentials
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Editor/OS
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Project specifics
+*.zip

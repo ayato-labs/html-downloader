@@ -1,0 +1,50 @@
+# HTML Downloader
+
+現在閲覧中のWebページをローカルファイルとして保存するChrome拡張機能。
+
+## 機能
+
+| 保存モード | 形式 | 内容 |
+|---|---|---|
+| HTMLのみ | `.html` | 現在のDOMスナップショット（テキスト・構造のみ） |
+| ページ全体 | `.mhtml` | 画像・CSS・JSを含む完全なアーカイブ |
+
+- ダウンロード完了後、保存先フォルダをワンクリックで開く機能
+- ファイル名はページタイトルから自動生成（禁止文字は自動サニタイズ）
+
+## インストール
+
+1. `chrome://extensions/` を開く
+2. 「デベロッパーモード」を有効にする
+3. 「パッケージ化されていない拡張機能を読み込む」をクリック
+4. このディレクトリを選択
+
+## 使い方
+
+1. 保存したいWebページを開く
+2. ツールバーのHTML Downloaderアイコンをクリック
+3. 保存形式を選択（HTMLのみ / ページ全体）
+4. 「ダウンロード」をクリック
+
+## 技術仕様
+
+- **Manifest Version**: 3
+- **権限**: `activeTab`, `scripting`, `downloads`, `pageCapture`
+- **対象ブラウザ**: Google Chrome (Chromium系)
+
+## ファイル構成
+
+```
+HTML Downloader/
+  manifest.json   # 拡張機能の定義
+  popup.html      # ポップアップUI構造
+  popup.js        # ダウンロードロジック
+  style.css       # スタイル定義
+  README.md       # 本ドキュメント
+  REQUIREMENTS.md # 要件定義書
+```
+
+## 制約
+
+- `chrome://` や `chrome-extension://` 等のシステムページでは動作しない（ブラウザのセキュリティ制限）
+- HTMLのみモードでは外部リソース（画像・CSS等）は保存対象外
