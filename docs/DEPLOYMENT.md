@@ -31,12 +31,12 @@ GitHubリポジトリの設定画面から、先ほど取得した値をSecret�
 1. GitHub リポジトリを開き、**Settings > Secrets and variables > Actions** へ進みます。
 2. **New repository secret** をクリックし、以下の4つを登録します。
 
-| Name | Secret | 備考 |
-|---|---|---|
-| `EXTENSION_ID` | Chrome Web Store上の拡張機能ID | ストアのダッシュボード等で確認可能な `a-z` の32文字 |
-| `CLIENT_ID` | Google Cloudで取得したクライアントID | |
-| `CLIENT_SECRET` | Google Cloudで取得したクライアントシークレット | |
-| `REFRESH_TOKEN` | 先ほどcurlで取得したリフレッシュトークン | |
+| Name            | Secret                                         | 備考                                                |
+| --------------- | ---------------------------------------------- | --------------------------------------------------- |
+| `EXTENSION_ID`  | Chrome Web Store上の拡張機能ID                 | ストアのダッシュボード等で確認可能な `a-z` の32文字 |
+| `CLIENT_ID`     | Google Cloudで取得したクライアントID           |                                                     |
+| `CLIENT_SECRET` | Google Cloudで取得したクライアントシークレット |                                                     |
+| `REFRESH_TOKEN` | 先ほどcurlで取得したリフレッシュトークン       |                                                     |
 
 ## 3. デプロイの運用
 
