@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Format Check
+        run: npm run format
+
+      - name: Run Tests
+        run: npm run test
+
+      - name: Verify build process
+        run: |
+          mkdir -p dist
+          cp -r icons dist/
+          cp manifest.json popup.html popup.js style.css dist/ converter.js dist/
+          echo "Build successful."
