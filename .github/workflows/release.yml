@@ -49,12 +49,7 @@ jobs:
           ref: refs/tags/v${{ needs.release.outputs.new_release_version }}
 
       - name: Build and Zip
-        run: |
-          mkdir -p dist
-          cp -r icons dist/
-          cp manifest.json popup.html popup.js style.css dist/
-          cd dist
-          zip -r ../html_downloader.zip *
+        run: npm run build
 
       - name: Upload to Chrome Web Store (Draft)
         uses: cardinalby/webext-buildtools-chrome-webstore-upload-action@v1

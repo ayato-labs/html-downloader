@@ -14,11 +14,14 @@
     <label>
       <input type="radio" name="format" value="mhtml"> ページ全体 (MHTML)
     </label>
+    <label>
+      <input type="radio" name="format" value="markdown"> Markdown (.md)
+    </label>
   </div>
 
   <button id="downloadBtn">ダウンロード</button>
   <button id="openFolderBtn" style="display: none; background-color: #2196F3; margin-top: 10px;">保存先フォルダを開く</button>
   <div id="status"></div>
-  <script src="popup.js"></script>
+  <script type="module" src="popup.js"></script>
 </body>
 </html>
